@@ -5,6 +5,8 @@ interface HomeProps {
 }
 
 const Home = ({ darkMode }: HomeProps) => {
+  const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
+
   const specialties = [
     'IT Infrastructure & Network Data',
     'Unified Communications (Microsoft Teams, Zoom, Webex DI & Calling)',
@@ -176,10 +178,10 @@ const Home = ({ darkMode }: HomeProps) => {
             Reliable IT infrastructure, unified communications, and cloud solutions tailored for enterprises worldwide.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-primary">
+            <a href={webhookUrl || '#contact'} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
               Request a Consultation
             </a>
-            <a href="#contact" className="btn btn-secondary">
+            <a href={webhookUrl || '#contact'} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
               Talk to Our Experts
             </a>
           </div>
